@@ -1,9 +1,9 @@
 apiVersion:  apps/v1
 kind: ReplicaSet
 metadata:
-  name: rs_in
+  name: rs
   labels:
-    app: rs_in
+    app: rs
 spec:
   selector:
     matchExpressions:
