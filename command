@@ -33,3 +33,11 @@ kubectl apply -f ReplicationController.yaml
 kubectl get pods 
 kubectl get rc
 kubectl delete -f ReplicationController
+
+ReplicaSet
+
+kubectl apply-f rs_in.yaml
+kubectl get pods
+kubectl get rs
+kubectl describe rs
+kubectl delete -f rs_in.yaml
