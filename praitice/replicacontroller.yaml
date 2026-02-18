@@ -12,7 +12,7 @@ spec:
     metadata:
       name: flipkarapp
       labels:
-        app: flipkatapp
+        app: flipkartapp
     spec:
       containers:
       - name: nginx
