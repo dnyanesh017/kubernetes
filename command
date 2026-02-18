@@ -27,3 +27,9 @@ kubectl apply -f service.yaml
 kubectl get svc
 kubectl delete -f service.yaml
 
+ReplicationController
+
+kubectl apply -f ReplicationController.yaml
+kubectl get pods 
+kubectl get rc
+kubectl delete -f ReplicationController
