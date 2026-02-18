@@ -19,3 +19,11 @@ kubectl apply -f Lb_pod.yaml
 kubectl get pods
 kubectl delete -f Lb_pod.yaml
 
+---
+
+service.yaml
+
+kubectl apply -f service.yaml
+kubectl get svc
+kubectl delete -f service.yaml
+
