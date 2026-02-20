@@ -41,3 +41,11 @@ kubectl get pods
 kubectl get rs
 kubectl describe rs
 kubectl delete -f rs_in.yaml
+
+StatefulSet
+
+kubectl apply -f StatefulSet.yaml
+kubectl get pods
+kubectl get StatefulSet
+kubectl describe pod StatefulSet
+kubectl delete -f StatefulSet
