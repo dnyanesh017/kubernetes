@@ -9,7 +9,7 @@ spec:
   strategy:
     type: RollingUpdade
     rollingUpdate:
-      maxUnavailable: 1
+      maxUnavailable:  1  #at a tine only 1 pod will be unavailable during the update process and 1 will be availabkle
       maxSurge: 1
   selector:
     matchLabels:
