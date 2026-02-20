@@ -20,7 +20,7 @@ spec:
         app: nginxdeployment
     spec:
       containers:
-        name: nginx
+      - name: nginx
         image: nginc:latest
         ports:
         - containerPort: 80
