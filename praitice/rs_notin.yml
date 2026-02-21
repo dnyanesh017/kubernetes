@@ -1,14 +1,14 @@
-apiVersion: apps/v1
+apiVersion:  apps/v1 
 kind: ReplicaSet
 metadata: 
-  name: rs-notin
-  labels:
-    app: rs-notin
+   name: rs-notin
+   labels:
+      app: rs-notin
 spec:
   selector:
-    matchLabels:
-    -  { key: app, operator: NotIn, values: [rsapp,  new-app , nginx-in]}
-   replicas: 3
+    matchExpressions:
+        -  { key: app, operator: NotIn, values: [rsapp,  new-app , nginx-in]}
+  replicas: 3
   template:
       metadata: 
         name: nginx  
