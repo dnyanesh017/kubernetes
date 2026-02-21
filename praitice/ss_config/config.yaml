@@ -3,6 +3,6 @@ kind: ConfigMap
 metadata:
   name: mysql-configmap
   labels:
-    app: mysql:configmap
+    app: mysql-configmap
 data:
-  mysql: "1234"
+  mysqlkey: "1234"
