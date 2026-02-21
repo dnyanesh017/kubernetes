@@ -1,8 +1,10 @@
+
 apiVersion: v1
 kind: ConfigMap
-metadata:
-  name: mysql-configmap
-  labels:
-    app: mysql-configmap
+metadata: 
+   name: mysql-configmap
+   labels: 
+      app: mysql-configmap
 data:
-  mysqlkey: "1234"
+   mysqlkey: "1234" 
+   
