@@ -13,7 +13,7 @@ spec:
     metadata:
       name: nginx-ml
       labels:
-      app: nginx-ml
+        app: nginx-ml
     spec:
       containers:
       - name: nginx
