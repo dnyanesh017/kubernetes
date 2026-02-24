@@ -14,6 +14,6 @@ spec:
     image: nginx:latest
     volumeMounts:
     - name: vol
-      mounthPath: /usr/share/nginx/html
+      mountPath: /usr/share/nginx/html
     ports:
     - containerPort: 80
