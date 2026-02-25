@@ -1,0 +1,67 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: nginxdeployment
+  labels:
+    app: nginxdeployment
+spec:
+  replicas: 1 # initial cold started replica count for the deployment
+  strategy:
+    type: RollingUpdate
+    rollingUpdate: 
+      maxUnavailable: 1
+      maxSurge: 1
+  selector: 
+    matchLabels:
+      app: nginxdeployment
+  template:
+    metadata:
+      labels:
+        app: nginxdeployment
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+        resources: 
+          requests:
+            cpu: 300m
+            memory: 300Mi
+          limits:
+            cpu: 600m
+            memory: 600Mi
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata: 
+  name: nginxdeployment-hpa
+  labels:
+    app: nginxdeployment
+spec:
+  scaleTargetRef: 
+    apiVersion: apps/v1
+    kind: Deployment
+    name: nginxdeployment
+  minReplicas: 1 #minimum number of replicas for the deployment
+  maxReplicas: 2 #maximum number of replicas for the deployment
+  metrics:
+  - type: resource
+    resource:
+      name: cpu
+      target:
+        type: Uitilization
+        averageUtilization: 5 #target average CPU utilization percentage for scaling
+    
+
+
+
+
+
+
+
+
+
+
+
+    
