@@ -32,6 +32,18 @@ spec:
             cpu: 600m
             memory: 600Mi
 ---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginxdeployment
+spec:
+  selector:
+    app: nginxdeployment
+  ports:
+  - port: 80
+    targetPort: 80
+  type: ClusterIP
+---
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata: 
