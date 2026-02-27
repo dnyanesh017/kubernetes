@@ -1,0 +1,30 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress
+  ingannotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx
+  rules: 
+  - host:
+    http:
+      paths:
+      - paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            Service:
+              name: npci
+              port:
+                number: 80
+        - path: 
+        pathType: Prefix
+        backend:
+          Service:
+            name: tcci
+            port:
+              number: 8080
+
+              
+
