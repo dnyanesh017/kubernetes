@@ -49,3 +49,17 @@ kubectl get pods
 kubectl get StatefulSet
 kubectl describe pod StatefulSet
 kubectl delete -f StatefulSet
+
+hpa
+
+kubectl apply -f .
+kubectl get pods
+kubectl describe pods
+kubectl deploy pods
+kubectl get hpa
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+kubectl edit deployment metrics-server -n kube-system
+- --kubelet-insecure-tls
+kubectl run -it load-generator --image=busybox -- /bin/sh
+while true; do wget -q -O- http://nginxdeployment; done
+kubectl get hpa -w
